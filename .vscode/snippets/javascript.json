@@ -1,0 +1,186 @@
+{
+    "React class component": {
+        "prefix": "rex-class-component",
+        "description": "React class component",
+        "body": [
+            "",
+            "import React, {Component} from \"react\";",
+            "import PropTypes from \"prop-types\";",
+            "",
+            "export default class ${1:ClassName} extends Component {",
+            "\tconstructor(props) {",
+            "\t\tsuper(props);",
+            "\t}",
+            "\t",
+            "\tcomponentDidMount() {",
+            "\t\t",
+            "\t}",
+            "\t",
+            "\trender() {",
+            "\t\treturn (",
+            "\t\t\t<div> ",
+            "\t\t\t<h2>${1:ClassName}</h2>",
+            "\t\t\t</div>",
+            "\t\t)",
+            "\t}",
+            "} ",
+            "",
+            "",
+            "${1:ClassName}.defaultProps = {",
+            "\t",
+            "}",
+            "",
+            "${1:ClassName}.propTypes = {",
+            "\t",
+            "}"
+        ]
+    },
+    "React-Redux Container component": {
+        "prefix": "rex-container-component",
+        "description": "React-Redux Container component",
+        "body": [
+            "",
+            "import {connect} from \"react-redux\";",
+            "import {bindActionCreators} from \"redux\";",
+            "",
+            "import ${1:ComponentName} from \"../components/${1:ComponentName}\";",
+            "import * as ${2:actions} from \"../Actions\";",
+            "",
+            "const mapStateToProps = (state) => {",
+            "    return {",
+            "         ",
+            "    }",
+            "}",
+            "",
+            "const mapDispatchToProps = (dispatch) => {",
+            "    return {",
+            "        ${2:actions}: bindActionCreators(${2:actions}, dispatch)",
+            "    }",
+            "}",
+            "",
+            "export default connect(mapStateToProps, ",
+            "                    mapDispatchToProps) (${1:ComponentName})"
+        ]
+    },
+    "React functional component": {
+        "prefix": "rex-functional-component",
+        "description": "React functional component",
+        "body": [
+            "",
+            "import React from \"react\";",
+            "import PropTypes from \"prop-types\";",
+            "",
+            "export default function ${1:functionName}(props) { ",
+            "\t\treturn (",
+            "\t\t\t<div> ",
+            "\t\t\t<h2>${1:functionName}</h2>",
+            "\t\t\t</div>",
+            "\t\t)",
+            "} ",
+            "",
+            "",
+            "${1:functionName}.defaultProps = {",
+            "\t",
+            "}",
+            "",
+            "${1:functionName}.propTypes = {",
+            "\t",
+            "}"
+        ]
+    },
+    "list <li> elements": {
+        "prefix": "rex-options",
+        "description": "list <li> elements",
+        "body": [
+            "",
+            "let ${1:optionsName} = this.props.${2:propName}",
+            "                    .map ( ${3:item} => (",
+            "                        <option key={${4:key}}",
+            "                                value={${5:value}}>",
+            "                            {${6:text}}",
+            "                        </option>",
+            "                    ))"
+        ]
+    },
+    "nav link with active class name": {
+        "prefix": "rex-nav-link",
+        "description": "nav link with active class name",
+        "body": [
+            "",
+            "<NavLink to=\"/${1:path}\" ",
+            "        exact ",
+            "        className=\"button\"  ",
+            "        activeClassName=\"success\" >",
+            "        ${1:path}",
+            "</NavLink>",
+            ""
+        ]
+    },
+    "promise default": {
+        "prefix": "rex-promise",
+        "description": "promise default",
+        "body": [
+            "",
+            "return new Promise(function(resolve, reject) {",
+            "",
+            "    //resolve()",
+            "",
+            "    //reject()",
+            "})"
+        ]
+    },
+    "Route with import from components": {
+        "prefix": "rex-route-component",
+        "description": "Route with import from components",
+        "body": [
+            "",
+            "import ${1:Component} ",
+            "            from \"./components/${1:Component}\";",
+            "",
+            "<Route path=\"${2:path}\" ",
+            "       component={${1:Component}}>",
+            "",
+            "</Route>"
+        ]
+    },
+    "Route with import from container": {
+        "prefix": "rex-route-container",
+        "description": "Route with import from container",
+        "body": [
+            "",
+            "import ${1:Component} ",
+            "            from \"./containers/${1:Component}\";",
+            "",
+            "<Route path=\"${2:path}\" ",
+            "       component={${1:Component}}>",
+            "",
+            "</Route>"
+        ]
+    },
+    "Route module for feature": {
+        "prefix": "rex-route-module",
+        "description": "Route module for feature",
+        "body": [
+            "",
+            "import React from \"react\";",
+            "",
+            "import {Route, ",
+            "        Switch,",
+            "        } from \"react-router-dom\";",
+            "",
+            "        ",
+            "import ${1:FeatureLayout} ",
+            "        from \"./components/${1:FeatureLayout}\";",
+            "",
+            " ",
+            "export default function Routes(props) {",
+            "    return (",
+            "        <${1:FeatureLayout}>",
+            "             ",
+            "        </${1:FeatureLayout}>",
+            "    )",
+            "}",
+            ""
+        ]
+    }
+}

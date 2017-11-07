@@ -1,0 +1,18 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/node_modules": true,
+        "**/.DS_Store": true,
+        "react-starter" : false,
+        "react-complete" : false,
+        "redux-starter" : false
+      },
+
+      "search.exclude": {
+          "**/node_modules": true,
+          "**/bower_components": true,
+          "react-starter" : true,
+          "react-complete" : true,
+          "redux-starter" : true  
+      }
+}
