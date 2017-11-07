@@ -29,7 +29,9 @@ import Loadable from 'react-loadable';
 
 function Loading() {
     return (
-        <div>Loading ...</div>
+        <div> 
+            Loading ...
+        </div>
     )
 }
 
