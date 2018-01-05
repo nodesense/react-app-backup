@@ -42,7 +42,7 @@ export default class ProductList extends Component {
                            <td>
                            
                            <Link to={`/products/edit/${product.id}`}
-                              className="button">
+                              >
                               {product.name}
                             </Link>
                            

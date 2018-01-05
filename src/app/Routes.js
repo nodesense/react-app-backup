@@ -46,6 +46,8 @@ const LoadableCartComponent = Loadable({
   });
   
 
+import AuthRoute from "./auth/components/AuthRoute";
+
 export default function Routes(props) {
     return (
         <Router>
@@ -58,7 +60,7 @@ export default function Routes(props) {
 
                     <Route path='/about'  component={LoadableAboutComponent} />
 
-                    <Route path='/contact'  component={Contact} />
+                    <AuthRoute path='/contact'  component={Contact} />
 
                     <Route path="/products" component={ProductRoutes} />
                 

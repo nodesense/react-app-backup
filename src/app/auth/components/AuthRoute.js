@@ -1,5 +1,7 @@
-import React, { PropTypes } from 'react';
+import React  from 'react';
 import { Route, Redirect } from 'react-router-dom';
+
+import PropTypes from "prop-types";
 
 const AuthRoute = ({ component, exact = false, path, authenticated }) => (
   <Route
@@ -36,7 +38,7 @@ const mapStateToProps = (state) => {
   console.log("Auth State", state.authState);
   
   return {
-    authenticated: state.authState.auth.authenticated
+    authenticated: state.authState.authenticated
   }
 }
 
