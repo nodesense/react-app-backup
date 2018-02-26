@@ -2,7 +2,12 @@ import {createStore,
     combineReducers, 
     applyMiddleware} from "redux";
 
+
 import thunk from "redux-thunk";
+import createSagaMiddleware from 'redux-saga'
+
+const sagaMiddleware = createSagaMiddleware()
+
  
 import cartReducers from "./cart/state/reducers";
 import productReducer from "./product/state/reducer";
@@ -42,7 +47,11 @@ let store = createStore(rootReducer,
                     {
                         authState: getInitialAuthState()
                     },
-                    applyMiddleware(loggerMiddleware, thunk));
+                    applyMiddleware(loggerMiddleware, thunk, sagaMiddleware));
 
+
+import productSaga from './product/state/sagas';
+
+sagaMiddleware.run(productSaga)
 
 export default store;

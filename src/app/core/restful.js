@@ -17,6 +17,7 @@ function fetchJson(url, options = undefined) {
         console.log("options ", options);
     }
 
+    console.log("Reaching");
     return fetch(url, options)
            .then ( response =>  {
                console.log("response is ", response);
@@ -81,11 +82,10 @@ export function putJson(url, data, headers = undefined) {
     })
 }
 
+export function deleteJson(url) {
+    console.log("deleting ", url);
 
-export function deleteJson(url, data, headers = undefined) {
     return fetchJson(url, {
-        method: 'DELETE',
-        headers: headers,
-        body: JSON.stringify(data)
+        method: 'DELETE'
     })
 }

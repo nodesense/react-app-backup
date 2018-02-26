@@ -1,3 +1,5 @@
+// To support, async and await keywords, that includes
+//regenerator runtime, not supported by browsers yet
 import "babel-polyfill";
 
 import React from "react";

@@ -10,7 +10,11 @@ export default class ProductList extends Component {
     }
 
     componentDidMount() {
-        this.props.actions.fetchProductsAsync();
+        // Using Thunk
+        // this.props.actions.fetchProductsAsync();
+
+        // Using Saga
+        this.props.actions.fetchProductsWithSaga();
     }
  
     render() {
@@ -34,6 +38,7 @@ export default class ProductList extends Component {
                         <th>Price</th>
                         <th>Year</th>
                         <th>+Cart</th>
+                        <th>Delete</th>
                     </tr>
                   
                 {
@@ -52,6 +57,12 @@ export default class ProductList extends Component {
                            <td>
                                <button onClick={() => this.props.addItemToCart(product)}>
                                 +Cart
+                               </button>
+                            </td>
+
+                            <td>
+                               <button onClick={() => this.props.actions.deleteProduct(product.id)}>
+                                X
                                </button>
                             </td>
                         </tr>

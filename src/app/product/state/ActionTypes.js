@@ -5,3 +5,8 @@ export const LOADING = "PRODUCT.LOADING";
 export const INIT_PRODUCTS = "PRODUCT.INIT_PRODUCTS";
 
 export const EDIT_PRODUCT = "PRODUCT.EDIT_PRODUCT";
+
+
+
+//saga example
+export const FETCH_PRODUCTS = "PRODUCT.FETCH_PRODUCTS";

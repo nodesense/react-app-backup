@@ -83,11 +83,18 @@ export default class ProductEdit extends Component {
                        
                         />
 
+
+                Price
+                <input name="price" 
+                        onChange= { (e) => this.changeValue(e) }
+                       value={this.props.product.price} />
+
                 Year
                 <input name="year" 
                         onChange= { (e) => this.changeValue(e) }
                        value={this.props.product.year} />
 
+                
 
                 <button type="submit">
                     Save

@@ -107,3 +107,23 @@ export function saveProduct(product) {
         })
     }
 }
+
+
+export function fetchProductsWithSaga() {
+    return {
+        type: ActionTypes.FETCH_PRODUCTS
+    }
+}
+
+export function deleteProduct(id) {
+    console.log("Del product ", id);
+    return async function (dispatch) {
+        try {
+            let p = await service.deleteProduct(id)
+            //dispatch(fetchProductsAsync());
+        }
+        catch(error) {
+            console.error(error)
+        }
+    }
+}
