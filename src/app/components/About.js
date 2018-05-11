@@ -8,7 +8,8 @@ export default class About extends Component {
 
         this.state = {
             members: ["Member 1", "Member 2"],
-            showList: true
+            showList: true,
+            pageLikes: 0
         }
 
     }
@@ -34,6 +35,19 @@ export default class About extends Component {
         });
     }
 
+    up = () => {
+        this.setState({
+            pageLikes : this.state.pageLikes + 1
+        })
+    }
+
+    down = () => {
+        this.setState({
+            pageLikes : this.state.pageLikes - 1
+        })
+    }
+
+
     render() {
 
         console.log("about render called");
@@ -41,6 +55,16 @@ export default class About extends Component {
         return (
             <div>
                 <h2>About</h2>
+
+                 <span>{this.state.pageLikes}</span>
+
+                <button id="up" onClick={this.up}>
+                    Up
+                </button>
+
+                <button className="downBtn"  onClick={this.down}>
+                    Down
+                </button>
 
                 <button onClick={() => this.addMember()}>
                     Add

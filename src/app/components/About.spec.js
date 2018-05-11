@@ -53,7 +53,39 @@ describe("About component Suite", ()=> {
         expect(wrapper.find("ul").length).toBe(0);
         expect(wrapper.find("li").length).toBe(0);
     })
+
+    it("Likes test ", () => {
+        let wrapper = mount(<About  />);
+        let component = wrapper.instance();
+
+        //wrapper.find("#up").prop('onClick')();
+        // or
+        //wrapper.find("#up").props().onClick();
+
+        // or
+        wrapper.find("#up").simulate('click'); // the only simulate click I want
+
+
+        wrapper.update();
+        expect(component.state.pageLikes).toBe(1);
+        expect(wrapper.find("span").text()).toBe("1");
+
+    })
  
+
+    it("Likes test with findWhere ", () => {
+        let wrapper = mount(<About  />);
+        let component = wrapper.instance();
+ 
+
+        wrapper.find('.downBtn').simulate('click');
+
+        wrapper.update();
+        expect(component.state.pageLikes).toBe(-1);
+        expect(wrapper.find("span").text()).toBe("-1");
+        expect(wrapper.find("span").text()).toContain("-1");
+
+    })
     
 
 })
