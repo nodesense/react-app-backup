@@ -8,6 +8,7 @@
     "build": "webpack --config  config/webpack.prod.config.js  --progress",
     "test": "jest",
     "test-coverage": "jest --coverage"
+
   },
   "keywords": [],
   "author": "",
