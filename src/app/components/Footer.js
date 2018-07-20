@@ -5,7 +5,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "./footer.css";
+//import "./footer.css";
 
 export default function Footer(props) { 
         return (

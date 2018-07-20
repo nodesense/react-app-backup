@@ -27,6 +27,13 @@ export default function Navigation(props) {
                        Cart [{props.count}]
                </NavLink>
 
+
+               <NavLink to="/react-cart" 
+                       className="button"  
+                       activeClassName="success" >
+                       React Cart
+               </NavLink>
+
                <NavLink to="/about" 
                        className="button"  
                        activeClassName="success" >

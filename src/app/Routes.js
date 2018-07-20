@@ -21,7 +21,9 @@ import NotFound from "./components/NotFound";
 import ProductList from "./product/containers/ProductList";
 import Cart from "./cart/containers/Cart";
 import Login from "./auth/containers/Login";
- 
+
+import ReactCart from "./react-cart/components/Cart";
+
 
 import ProductRoutes from "./product/Routes";
 
@@ -56,6 +58,8 @@ export default function Routes(props) {
                 <Switch>
                     <Route path='/' exact component={Home} />
                     <Route path='/cart'  component={Cart} />
+
+                    <Route path="/react-cart" component={ReactCart} />
                     
                     {/* <Route path='/about'  component={About} /> */}
 
