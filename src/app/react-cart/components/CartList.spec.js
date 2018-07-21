@@ -14,7 +14,8 @@ fdescribe("React Cart component Suite", ()=> {
         // Shall work
         expect(wrapper.find("tr").length).toBe(1);
 
-        expect(wrapper.find(CartItem)).to.have.length(1);
+        //expect(wrapper.find(CartItem)).to.have.length(1);
+        expect(wrapper.find(CartItem).length).toBe(1);
 
 
         //shall not work, as it doesn't render deep components
