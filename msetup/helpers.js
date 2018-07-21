@@ -31,6 +31,6 @@ global.mount = mount;
 global.render = render;
 global.shallow = shallow;
 global.should = should;
+global.expect = expect;
 
 chai.use(chaiEnzyme()) 
-global.expect = expect;
