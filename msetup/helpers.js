@@ -23,7 +23,14 @@ import chai from 'chai'
 import chaiEnzyme from 'chai-enzyme'
 
 import { expect } from 'chai';
+import {should} from 'chai';
 
+import { mount, render, shallow} from 'enzyme';
+
+global.mount = mount;
+global.render = render;
+global.shallow = shallow;
+global.should = should;
 
 chai.use(chaiEnzyme()) 
 global.expect = expect;
