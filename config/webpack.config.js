@@ -31,6 +31,8 @@ var config = {
   },
  
   module : {
+    
+
     loaders : [
       {
         test : /\.js?/,
@@ -38,19 +40,32 @@ var config = {
         loaders: [ "babel-loader"]
       },
 
+      //post css begin
+      // needs npm i sugarss 
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          { loader: 'css-loader', options: { importLoaders: 1, sourceMap: true } },
+          'postcss-loader'
+        ]
+      },
+      //post css end
 
-      { test: /\.css$/, 
-        use: ExtractTextPlugin.extract({
-				fallback: "style-loader",
-				use: {
-					loader: "css-loader",
-					options: {
-						sourceMap: true
-					}
-				},
-				publicPath: "../"
-      }) 
-     }
+
+    //   { test: /\.css$/, 
+    //     use: ExtractTextPlugin.extract({
+		// 		fallback: "style-loader",
+		// 		use: {
+		// 			loader: "css-loader",
+		// 			options: {
+		// 				sourceMap: true
+		// 			}
+		// 		},
+		// 		publicPath: "../"
+    //   }) 
+    //  }
+
     ]
   },
 
@@ -66,6 +81,13 @@ var config = {
   devtool: 'source-map',
 
   plugins: [
+    //https://github.com/jonathantneal/precss
+    //PreCSS lets you use Sass-like markup and staged CSS features in CSS.
+    require('precss'),
+
+    //https://github.com/postcss/autoprefixer
+    //PostCSS plugin to parse CSS and add vendor prefixes to CSS rules using values from Can I Use. 
+    require('autoprefixer'),
 
     new webpack.DefinePlugin ({
       VERSION: JSON.stringify("1.0.0"),
