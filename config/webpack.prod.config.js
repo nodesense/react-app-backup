@@ -34,7 +34,7 @@ var config = {
   },
  
   module : {
-    loaders : [
+    rules : [
       {
         test : /\.js?/,
         include : APP_DIR,

@@ -31,25 +31,40 @@ var config = {
   },
  
   module : {
-    
+    rules: [
+      {
+        enforce: "pre",
+        test: /\.js$/,
+        exclude: /node_modules/,
+        include: APP_DIR,
+        loader: "eslint-loader",
+      },
 
-    loaders : [
       {
         test : /\.js?/,
         include : APP_DIR,
         loaders: [ "babel-loader"]
       },
+    ],
 
-      //post css begin
-      // needs npm i sugarss 
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          { loader: 'css-loader', options: { importLoaders: 1, sourceMap: true } },
-          'postcss-loader'
-        ]
-      },
+
+    // loaders : [
+    //   {
+    //     test : /\.js?/,
+    //     include : APP_DIR,
+    //     loaders: [ "babel-loader"]
+    //   },
+
+    //   //post css begin
+    //   // needs npm i sugarss 
+    //   {
+    //     test: /\.css$/,
+    //     use: [
+    //       'style-loader',
+    //       { loader: 'css-loader', options: { importLoaders: 1, sourceMap: true } },
+    //       'postcss-loader'
+    //     ]
+    //   },
       //post css end
 
 
@@ -66,7 +81,7 @@ var config = {
     //   }) 
     //  }
 
-    ]
+   // ]
   },
 
   //the config entry given here can be imported into any file using
