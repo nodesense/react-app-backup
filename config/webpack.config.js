@@ -32,13 +32,13 @@ var config = {
  
   module : {
     rules: [
-      {
-        enforce: "pre",
-        test: /\.js$/,
-        exclude: /node_modules/,
-        include: APP_DIR,
-        loader: "eslint-loader",
-      },
+      // {
+      //   enforce: "pre",
+      //   test: /\.js$/,
+      //   exclude: /node_modules/,
+      //   include: APP_DIR,
+      //   loader: "eslint-loader",
+      // },
 
       {
         test : /\.js?/,
