@@ -1,4 +1,7 @@
-import config from "config";
+//import config from "config";
+
+import * as config from "../core/config";
+
 
 import * as restful from "../core/restful";
 

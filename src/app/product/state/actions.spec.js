@@ -6,11 +6,11 @@ import fetchMock from 'fetch-mock';
 import * as ActionTypes from "./ActionTypes";
 import * as actions from "./actions";
 
-jest.mock("config", () => {
-    return {
-        apiEndPoint: "http://example.com"
-    }
-})
+// jest.mock("config", () => {
+//     return {
+//         apiEndPoint: "http://example.com"
+//     }
+// })
 
 //import nock from 'nock'
  
@@ -29,7 +29,7 @@ describe("testing get products", () => {
        
     it("should get products", async () => {
  
-        fetchMock.get('http://example.com/api/products', [{id: 1},{id: 2}]);
+        fetchMock.get('http://localhost:7070/secured/api/products', [{id: 1},{id: 2}]);
 
         
         let actionFn = fetchProducts();

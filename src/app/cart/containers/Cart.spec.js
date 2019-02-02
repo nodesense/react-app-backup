@@ -1,11 +1,11 @@
 
 // reference: http://redux.js.org/docs/recipes/WritingTests.html
 
-jest.mock("config", () => {
-    return {
-        apiEndPoint: "http://example.com"
-    }
-})
+// jest.mock("config", () => {
+//     return {
+//         apiEndPoint: "http://example.com"
+//     }
+// })
 
 
 import {mount} from "enzyme";
@@ -33,7 +33,8 @@ xdescribe('async actions', () => {
 
   it('addItem with cart, store container mock', () => {
     
-    fetchMock.get('http://example.com/api/products', [{id: 1},{id: 2}]);
+    
+    fetchMock.get('http://localhost:7070/secured/api/products', [{id: 1},{id: 2}]);
     
     const expectedActions = [
       actions.addItemToCart(false)
