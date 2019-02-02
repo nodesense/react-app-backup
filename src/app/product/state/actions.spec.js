@@ -22,6 +22,7 @@ import {
 
 describe("testing get products", () => {
 
+    // called after every test case, clean up, restore to origin
     afterEach(() => {
        // nock.cleanAll()
         fetchMock.restore();
@@ -29,19 +30,21 @@ describe("testing get products", () => {
        
     it("should get products", async () => {
  
-        fetchMock.get('http://localhost:7070/secured/api/products', [{id: 1},{id: 2}]);
+        // actual url
+        // expected mock response
+        fetchMock.get('http://localhost:7070/secured/api/products', 
+                      [{id: 1},{id: 2}]); // mock response
 
         
+        // call the actual function, which makes api call
         let actionFn = fetchProducts();
 
         //mock for dispatch, to emulate thunk calling behaviour
         let dispatch = jest.fn();
          
-
+        // calling thunk method with dispatch mock function
         let products = await actionFn(dispatch);
- 
-    
-        
+     
         console.log("cheecking mock called");
         expect(dispatch).toHaveBeenCalled();
 
@@ -54,9 +57,7 @@ describe("testing get products", () => {
                 [{id: 1}, {id: 2}])
         ]);
 
-
         expect(dispatch.mock.calls[3]).toEqual([actions.loading(false)]);
-        
-              
+         
     })
 })

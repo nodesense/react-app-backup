@@ -13,6 +13,8 @@ describe ("Testing reducer", ()=> {
             error: null,
             products: [],
         
+            brand:   {},
+            brands:  [],
         
             product: {
                 name: '',

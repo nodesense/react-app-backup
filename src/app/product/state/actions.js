@@ -11,6 +11,38 @@ export function initProducts(products) {
     }
 }
 
+
+export function initBrands(brands) {
+    return {
+        type: ActionTypes.INIT_BRANDS,
+        payload: {
+            brands: brands
+        }
+    }
+}
+
+
+export function editProduct(product) {
+    return {
+        type: ActionTypes.EDIT_PRODUCT,
+        payload: {
+            product: product
+        }
+    }
+}
+
+
+export function initBrand(brand) {
+    return {
+        type: ActionTypes.INIT_BRAND,
+        payload: {
+            brand: brand
+        }
+    }
+}
+
+
+
 export function loading (status) {
     return {
         type: ActionTypes.LOADING,
@@ -84,18 +116,44 @@ export function getProduct(id) {
 
         service.getProduct(id)
         .then ( (product) => {
-            dispatch( {
-                type: ActionTypes.EDIT_PRODUCT,
-                product: product
+            service.getBrand(product.brandId)
+            .then ( brand => {
+                service.getBrands()
+                .then (brands => {
+                    dispatch(editProduct(product));
+                    dispatch(initBrand(brand));
+                    dispatch(initBrands(brands));
+                })
             })
         })
+    }
+}
+
+// ES8 async and await
+export function getProductByAsync(id) {
+    // thunk, return a function as an action
+    return async function(dispatch) {
+        console.log("Called by thunk ", id,  dispatch);
+
+        try {
+            const product = await service.getProduct(id);
+            const brand = await service.getBrand(product.brandId);
+            const brands = await service.getBrands();
+ 
+            dispatch(editProduct(product));
+            dispatch(initBrand(brand));
+            dispatch(initBrands(brands));
+        }catch (error) {
+            dispatch(loading(false));
+            dispatch(initError(error.toString()));
+        }
     }
 }
 
 export function updateProduct(product) {
     return {
         type: ActionTypes.EDIT_PRODUCT,
-        product: product
+        payload: { product }
     }
 }
 

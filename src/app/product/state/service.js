@@ -17,6 +17,10 @@ export async function getBrands() {
         return restful.getJson(config.apiEndPoint + "/api/brands")
 }
 
+export async function  getBrand(id) {
+    return restful.getJson(`${config.apiEndPoint}/api/brands/${id}`);
+}
+
 export async function searchProducts(q) {
     return restful.getJson(config.apiEndPoint + "/api/products?q=" + q)
 }

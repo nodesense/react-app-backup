@@ -12,7 +12,12 @@ const INITIAL_STATE = {
         year: 2017,
         brandId: 0,
         price: 0
-    }
+    },
+
+    brand: {
+    },
+
+    brands: []
 }
 
 export default
@@ -32,8 +37,17 @@ export default
                 return Object.assign({}, state, {products: action.payload.products})
             }
 
+
+            case ActionTypes.INIT_BRANDS: {
+                return {...state, brands: action.payload.brands}
+            }
+
+            case ActionTypes.INIT_BRAND: {
+                return {...state, brand: action.payload.brand}
+            }
+
             case ActionTypes.EDIT_PRODUCT: {
-                return Object.assign({}, state, {product: action.product})
+                return Object.assign({}, state, {product: action.payload.product})
             }
  
             default:

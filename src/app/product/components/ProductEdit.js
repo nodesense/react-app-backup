@@ -26,7 +26,13 @@ export default class ProductEdit extends Component {
         let id = this.props.match.params.id;
 
         if (id) {
-            this.props.actions.getProduct(id);
+            // bindAction method, automatically dispatch
+            
+            // ES6, promise as it is
+            // this.props.actions.getProduct(id);
+            
+            // ES8, with async, await keyword
+            this.props.actions.getProductByAsync(id);
         } else {
             this.props
                 .actions.updateProduct({
@@ -62,6 +68,9 @@ export default class ProductEdit extends Component {
     }
     
     render() {
+        let {product, 
+             brand,
+             brands } = this.props;
         return (
             <div> 
             <h2>{this.context.appTitle}</h2>
@@ -71,6 +80,10 @@ export default class ProductEdit extends Component {
             <p ref={(elem) => this.para1 = elem} >
                 Edit details here
             </p>
+
+            <p>Brand ID {product.brandId} </p>
+
+            <p>Brand Name {brand.name} </p>
 
             <form onSubmit={(e) => this.saveProduct(e)}  >
                 Name
@@ -95,6 +108,21 @@ export default class ProductEdit extends Component {
                        value={this.props.product.year} />
 
                 
+                Brand 
+                <select name="brandId"
+                        onChange={ (e) => this.changeValue(e)}
+                        value={product.brandId}>
+                        
+                    {
+                        brands.map(brand => (
+                            <option value={brand.id}
+                                   key={brand.id}>
+                                    {brand.name}
+                            </option>
+                        ))
+                    }        
+                        
+                </select>
 
                 <button type="submit">
                     Save
