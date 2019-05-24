@@ -35,9 +35,11 @@ describe('async actions', () => {
     
     const store = mockStore({ products: [] })
 
-    return store.dispatch(actions.fetchProducts()).then(() => {
-      // return of async actions
-      expect(store.getActions()).toEqual(expectedActions)
-    })
+    return store
+          .dispatch(actions.fetchProducts())
+            .then(() => {
+              // return of async actions
+              expect(store.getActions()).toEqual(expectedActions)
+            })
   })
 })

@@ -23,6 +23,8 @@ export default class Cart extends Component {
  
 
     removeItem(id) {
+        // redux, bind action creator method, 
+        // dispatch internally
         this.props.actions.removeItemFromCart(id);
     }
 

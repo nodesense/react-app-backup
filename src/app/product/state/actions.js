@@ -83,6 +83,7 @@ export function fetchProducts() {
         .catch ( error => {
             dispatch(loading(false));
             dispatch(initError(error.toString()));
+            return error;
         })
     }
 }

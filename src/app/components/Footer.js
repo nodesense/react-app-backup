@@ -11,7 +11,7 @@ export default function Footer(props) {
         return (
             <div className="highlight"> 
             <hr />
-                Copyrights@{props.year}, {props.company}
+             <p>Copyrights@{props.year}, {props.company}</p>
             </div>
         )
 } 

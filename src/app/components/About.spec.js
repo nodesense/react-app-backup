@@ -15,8 +15,11 @@ describe("About component Suite", ()=> {
 
     it("about addMember test", ()=> {
         let wrapper = mount(<About  />);
+
         let component = wrapper.instance();
-        component.addMember();
+        
+        component.addMember(); // 3rd item added to state
+        // this trigger/calls render. 
         wrapper.update();
 
         expect(wrapper.find("ul").length).toBe(1);
@@ -62,6 +65,10 @@ describe("About component Suite", ()=> {
         // or
         //wrapper.find("#up").props().onClick();
 
+
+        // or hardcoded array index
+       // wrapper.find("button").at(0).simulate('click'); 
+
         // or
         wrapper.find("#up").simulate('click'); // the only simulate click I want
 
@@ -77,7 +84,6 @@ describe("About component Suite", ()=> {
         let wrapper = mount(<About  />);
         let component = wrapper.instance();
  
-
         wrapper.find('.downBtn').simulate('click');
 
         wrapper.update();

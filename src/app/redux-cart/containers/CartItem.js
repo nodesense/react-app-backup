@@ -6,8 +6,13 @@ import CartItem from "../components/CartItem";
 import * as actions from "../state/actions";
 
  
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
     return {
+        removeItem: function(id) {
+            dispatch(actions.removeItem(id))
+            
+        },
+
         actions: bindActionCreators(actions, dispatch)
     }
 }

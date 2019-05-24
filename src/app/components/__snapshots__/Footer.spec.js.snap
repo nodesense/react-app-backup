@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="highlight"
+>
+  <hr />
+  <p>
+    Copyrights@
+    2019
+    , 
+    NodeSense
+  </p>
+</div>
+`;
+
+exports[`renders correctly 2`] = `
+<div
+  className="highlight"
+>
+  <hr />
+  <p>
+    Copyrights@
+    2019
+    , 
+    NodeSense
+  </p>
+</div>
+`;
