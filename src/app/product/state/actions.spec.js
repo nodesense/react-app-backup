@@ -32,7 +32,7 @@ describe("testing get products", () => {
  
         // actual url
         // expected mock response
-        fetchMock.get('http://localhost:7070/secured/api/products', 
+        fetchMock.get('http://localhost:7070/secured/api/products', //mock request
                       [{id: 1},{id: 2}]); // mock response
 
         
@@ -50,7 +50,10 @@ describe("testing get products", () => {
 
         expect(dispatch).toHaveBeenCalledTimes(4);
         
+        // Check output of the first dispatch call
         expect(dispatch.mock.calls[0]).toEqual([actions.initError(false)]);
+
+        // Check output of the second dispatch call
         expect(dispatch.mock.calls[1]).toEqual([actions.loading(true)]);
 
         expect(dispatch.mock.calls[2]).toEqual([actions.initProducts(

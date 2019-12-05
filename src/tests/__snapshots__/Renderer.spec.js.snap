@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`running renderer tests running renderer tests 1`] = `
+<section>
+  <div>
+    bar
+  </div>
+  <div>
+    <p>
+      Hello
+    </p>
+  </div>
+  <div>
+    bar
+  </div>
+  <button
+    onClick={[Function]}
+  >
+    ++
+  </button>
+  <div
+    className="even"
+  >
+    0
+  </div>
+</section>
+`;
+
+exports[`running renderer tests running renderer tests 2`] = `
+<section>
+  <div>
+    bar
+  </div>
+  <div>
+    <p>
+      Hello
+    </p>
+  </div>
+  <div>
+    bar
+  </div>
+  <button
+    onClick={[Function]}
+  >
+    ++
+  </button>
+  <div
+    className="even"
+  >
+    2
+  </div>
+</section>
+`;

@@ -48,7 +48,7 @@ describe('async actions', () => {
                                 <Cart items={[]} />
                         </Provider>);
 
-    expect(wrapper.find("tr").length).toBe(1);
+    expect(wrapper.find("tr").length).toBe(1); // header tr present
   })
 
 
@@ -71,7 +71,7 @@ describe('async actions', () => {
                                 <Cart   />
                         </Provider>);
 
-    expect(wrapper.find("tr").length).toBe(2);
+    expect(wrapper.find("tr").length).toBe(2);  // header + 1 item
 
     expect(wrapper.find("tr").at(1).text()).toContain("Test");
   })
