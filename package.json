@@ -29,7 +29,7 @@
     "eslint-loader": "^2.1.0",
     "eslint-plugin-react": "^7.11.1",
     "jquery": "^3.2.1",
-    "jsdom": "^11.11.0",
+    "jsdom": "^16.5.0",
     "mocha": "^5.2.0",
     "mockery": "^2.1.0",
     "ms": "^2.1.1",
